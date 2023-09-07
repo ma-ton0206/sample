@@ -1,0 +1,1301 @@
+@charset "UTF-8";
+
+html{
+    font-family: '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック体', YuGothic, 'Hiragino Sans', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+    overflow-x: hidden;
+}
+
+.wrapper{
+    max-width: 1100px;
+    padding: 0 50px;
+    margin: 0 auto;
+}
+
+.blue_color{
+    width: 100%;
+    background-color: #003C76;
+}
+
+h1,h2,h3,h4,h5,h6,a,p{
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.blue_color h1,
+.blue_color h2,
+.blue_color h3,
+.blue_color h4,
+.blue_color p,
+.blue_color a{
+    color: white;
+}
+
+p{
+    line-height: 1.4em;
+}
+
+h1,h2,h3{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+/* -----------header------------ */
+
+
+
+
+/* nav-アニメーション */
+
+/*==================================================
+　5-3-7 上下に線が伸びて背景になる
+===================================*/
+
+.gnavi li a{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+    /*はみ出る要素を隠す*/
+  overflow: hidden;
+    /*アニメーションの指定*/
+  transition: all .2s;
+  padding: 10px 20px;
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a,
+.gnavi li a:hover{
+    /*背景色をつける*/
+    background: #003C76;
+  color:#fff;
+}
+
+/*背景がつくのアニメーションの開始を0.5秒遅らせる*/
+.gnavi li a:hover{
+  transition-delay: .5s;
+}
+
+/*線の設定*/
+.gnavi li a:before,
+.gnavi li a:after {
+    content: "";
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    left: 0;
+    /*線の形状*/
+    height: 2px;
+    width:100%;
+    background: #003C76;
+    /*アニメーションの指定*/
+  transition: all .5s;
+}
+
+/*線の位置と変化*/
+.gnavi li a::before {
+    top: 0;
+  transform: translateX(-100%);/*X方向に-100%移動*/
+}
+.gnavi li a::after {
+    bottom: 0;
+  transform: translateX(100%);/*X方向に100%移動*/
+}
+
+/*hoverした際の線の変化*/
+.gnavi li a:hover::before ,
+.gnavi li a:hover::after {
+  transform: translateX(0);/*X方向に0%移動*/
+}
+/*========= レイアウトのためのCSS ===============*/
+
+
+
+/*  */
+
+
+#header{
+    width: 100%;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+#header .shop_name{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    z-index: 2;
+}
+
+#header .shop_name h1{
+    font-size: 10vw;
+    color: white;
+}
+
+.header_main{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    top:10px;
+    left: 0;
+    z-index: 2;
+}
+
+.header_main .main_nav{
+    display: flex;
+    list-style: none; 
+    align-items: center;
+    margin-left: 20px;
+    z-index: 2;
+}
+
+.header_main .main_nav li{
+    padding: 10px 20px;
+}
+
+.header_main .main_nav li a{
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.header_main .sns li{
+    margin-right: 20px;
+    margin-top: 20px;
+    list-style: none;
+}
+
+.header_main .sns a{
+    text-decoration: none;  
+    color: black;
+}
+
+.header_main .sns img{
+    object-fit: cover;
+    width: 25px;
+}
+
+.catchphrase{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top:50%;
+    font-size: 1.8vw;
+    z-index: 2;
+}
+
+.catchphrase h2{
+    color: white;
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+
+.mv_slider{
+    display: flex;
+    position:relative;
+    z-index: 1;
+  /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+    height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+}
+
+.mv_slider li{
+    list-style: none;
+}
+
+.slider-left,
+.slider-right {
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*　背景画像設定　*/
+
+.slider-item01 {
+    background:url(../img/annie-spratt-PM4Vu1B0gxk-unsplash.jpg);
+}
+
+.slider-item02 {
+    background:url(../img/andrew-spencer-YUEcePrJsgg-unsplash.jpg);
+}
+
+.slider-item03 {
+    background:url(../img/nathan-dumlao-c2Y16tC3yO8-unsplash.jpg);
+}
+
+.slider-item04 {
+    background:url(../img/nathan-dumlao-KixfBEdyp64-unsplash.jpg);
+}
+
+.slider-item05 {
+    background:url(../img/nordwood-themes-ivP3TYdLvw0-unsplash.jpg);
+}
+
+.slider-item06 {
+    background:url(../img/brooke-lark-DMpYt_kfqL4-unsplash.jpg);
+}
+
+.slider-item {
+    width: 100%;/*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+    height:100vh;/*各スライダーの縦幅を画面の高さの半分（50vh）にする*/
+    background-repeat: no-repeat;/*背景画像をリピートしない*/
+    background-position: center;/*背景画像の位置を中央に*/
+    background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
+}
+
+
+
+
+.mask{
+    display: none;
+    transition: all 0.5s;
+    z-index: 10;
+    width: 100%;
+	height: 100%;
+	background-color: #000000;
+	position: fixed;
+	top:0;
+	left:0;
+}
+
+.open .mask{
+    display: block;
+	opacity: 0.8;
+
+}
+
+.side_nav{
+    position: fixed;
+    left:-35%;
+    width: 35%;
+    height: 100vh;
+    z-index:100 ;
+    background-color: white;
+    opacity: 0;
+    transition: all 0.5s;
+    display: block;
+}
+
+.open .side_nav{
+
+    opacity: 1;
+    left:0;
+}
+
+.side_nav li{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.toggle_btn{
+	width: 50px;
+	height: 50px;
+	position: relative;
+	z-index: 100;
+	cursor: pointer;
+    display: none;
+    background-color: #333;
+    border-radius: 3px;
+}
+
+.toggle_btn span{
+	display: block;
+	position: absolute;
+	width: 30px;
+    left:10px;
+	height: 4px;
+	background-color:white ;
+	border-radius: 4px;
+	transition: all 0.5s;
+}
+
+.toggle_btn span:nth-child(1){
+	top:15px;
+}
+
+.toggle_btn span:nth-child(2){
+	bottom:15px;
+}
+
+.open .toggle_btn span{
+	background-color: white;
+}
+
+.open .toggle_btn span:nth-child(1){
+	transform: translateY(8px) rotate(-45deg);
+}
+
+.open .toggle_btn span:nth-child(2){
+    transform: translateY(-8px) rotate(45deg);
+}
+
+
+
+/* -----------new_product---------- */
+
+#new_product{
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.one-time{
+    width: 100%;
+}
+
+.new_product_conteiner{
+    text-align: center;
+}
+
+.new_product_conteiner p{
+    margin-bottom: 20px;
+    height: 2em;
+}
+
+.slick_img{
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.slick_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* -----------news------------ */
+
+#news{
+    display: flex;
+    margin-bottom: 50px;
+}
+.news_left{
+    width: 40%;
+}
+
+.news_left h2{
+    font-weight: 100;
+    font-size: 1.5em;
+}
+
+.news_right{
+    width: 60%;
+}
+
+.news_flex{
+    display: flex;
+    justify-content:left;
+    padding: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.news_flex:first-child{
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+.news_flex dt{
+    width: 100px;
+    font-size: 0.4em;
+}
+
+.news_flex dd{
+    font-size: 0.8em;
+    width: 100%;
+}
+
+dt,dd{
+    padding: 0;
+    margin: 0;
+}
+
+.news_btn{
+    margin-top: 25px;
+    width: 100%;
+    text-align: right;
+}
+
+/* -----------coffee_img-------- */
+
+.coffee_img{
+    position: relative;
+    width: 100%;
+	padding: 150px 0;
+	background-image:url("../img/coffee-beans-5928013_1280.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+/*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown4{
+    /*描画位置※位置は適宜調整してください*/
+  position:absolute;
+  bottom:1%;
+  right:50%;
+    /*矢印の動き1秒かけて永遠にループ*/
+  animation: arrowmove 1s ease-in-out infinite;
+}
+
+/*下からの距離が変化して全体が下→上→下に動く*/
+@keyframes arrowmove{
+      0%{bottom:1%;}
+      50%{bottom:3%;}
+     100%{bottom:1%;}
+ }
+
+/*Scrollテキストの描写*/
+.scrolldown4 span{
+    /*描画位置*/
+  position: absolute;
+  left:-30px;
+  bottom:10px;
+    /*テキストの形状*/
+  color: #eee;
+  font-size: 1.5em;
+  letter-spacing: 0.3em;
+  /*縦書き設定*/
+  -ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+
+/* 矢印の描写 */
+.scrolldown4:before {
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    bottom: 0;
+    right: -6px;
+    /*矢印の形状*/
+    width: 1px;
+    height: 20px;
+    background: #eee;
+    transform: skewX(-31deg);
+}
+
+.scrolldown4:after{
+  content:"";
+    /*描画位置*/
+  position: absolute;
+  bottom:0;
+  right:0;
+    /*矢印の形状*/
+  width:1px;
+  height: 120px;
+  background:#eee;
+}
+
+/* -----------concept------------ */
+
+
+.concept_h2{
+    text-align: right;
+    padding-top: 50px;
+}
+
+.concept_h2 h2{
+    display: flex;
+    flex-direction: column;
+}
+
+.concept_h2 h2 p{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 1.2em;
+}
+
+.concept_h2 h2 .p_1{
+    font-family:Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 1px white;
+    color: #003C76;
+    font-size: 4em;
+}
+
+.concept_h2 h2 .p_2{
+    font-size: 0.6em;
+}
+
+.concept_h2 h2 .p_3{
+    font-size: 1.2em;
+}
+
+.concept{
+    position: relative;
+    padding-bottom: 50px;
+}
+
+
+.concept h3{
+    display: flex;
+    font-size:1.3em;
+    margin-bottom:30px;
+    text-align: center;
+    justify-content: center;
+	align-items: center;
+}
+
+.concept h3::before,
+.concept h3::after {
+	content: '';
+	width: 40px;
+	height: 2px;
+	background-color: white;
+    
+}
+
+.concept h3::before {
+	margin-right: 20px;
+    rotate: 45deg;
+}
+.concept h3::after {
+	margin-left: 20px;
+    rotate: -45deg;
+}
+
+.concept .text{
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.concept .text p{
+    font-size: 1em;
+    line-height: 2.5em;
+}
+
+.text_conteiner{
+    z-index: 100;
+}
+
+.explain{
+    padding-top: 50px;
+    position: relative;
+    opacity: 0;
+    z-index: 2;
+    
+}
+
+
+
+.fadeUp{
+    animation-name:fadeUpAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeUpAnime{
+        from {
+        opacity: 0;
+        transform: translateY(100px);
+        }
+    
+        to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+
+
+/* -------menu--------- */
+
+.drink_menu{
+    margin-bottom: 100px;
+}
+
+.fadeUp_img{
+    opacity: 0;
+}
+
+.menu_img{
+    position: relative;
+    width: 100%;
+	padding: 150px 0;
+	background-image:url("../img/spoon-2754133_1280.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+.menu_h2{
+    padding-top:50px;
+}
+
+.menu_h2 h2{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu_h2 h2 p{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 1.2em;
+}
+
+.menu_h2 h2 .p_1{
+    font-family:Arial, Helvetica, sans-serif;
+    /* -webkit-text-stroke: 2px #003C76; */
+    color: #003C76;
+    font-size: 4em;
+}
+
+.menu_h2 h2 .p_2{
+    font-size: 0.6em;
+}
+
+.menu_h2 h2 .p_3{
+    font-size: 1em;
+    margin-bottom: 50px;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+    }
+
+.box{
+    height: 300px;
+    font-size: 0.85em;
+}
+
+.parent img{
+    width: 100%;
+    height: 250px;
+    object-fit:cover;
+}
+
+.parent h4{
+    text-align: center;
+}
+
+.menu h3{
+    text-align: right;
+    display:block;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.menu .food_menu h3{
+    text-align: left;
+
+}
+
+.menu h3 p{
+    position: relative;
+    display: inline-block;
+    padding: 0 1.5em;
+    text-align: center;
+}
+
+.menu h3 p:before,
+.menu h3 p:after {
+  font-family: 'Font Awesome 5 Free';
+  line-height: 1;
+  position: absolute;
+  top: calc(50% - .5em);
+  background-color: white;
+  color: #003C76;
+}
+
+.menu h3 p:before {
+  left: 0;
+  content: '\f101';
+}
+
+.menu h3 p:after {
+  right: 0;
+  content: '\f100';
+}
+
+
+/* --------access--------- */
+svg{
+    position: relative;
+    top: 10px;
+}
+
+.access h2{
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 50px;
+}
+
+.access_flex{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+
+.access_img{
+    flex-basis: 45%;
+}
+
+.access_img img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.access_text{
+    flex-basis: 45%;
+}
+
+.access_text p:nth-child(1){
+    margin-bottom: 30px;
+}
+
+.access_text p:nth-child(2){
+    margin-bottom: 30px;
+}
+
+.info_flex{
+    display: flex;
+    justify-content:left;
+    padding: 30px;
+    border-bottom: 1px solid white;
+}
+
+.info_flex:first-child{
+    border-top: 1px solid white;
+    width: 100%;
+}
+
+.info_flex dt{
+    width: 200px;
+    font-size: 1em;
+    color: white;
+}
+
+.info_flex dd{
+    width: 100%;
+    font-size: 0.9em;
+    color: white;
+    text-align: left;
+}
+
+iframe{
+    width: 100%;
+    height: 300px;
+    margin-top: 50px;
+}
+
+/* ---------footer---------- */
+
+#footer{
+    padding: 40px 0 10px 0 ;
+    text-align: center;
+}
+
+
+
+/* ----------rotate_img---------- */
+
+.rotate_img_even,
+.rotate_img_odd{
+    position:relative ;
+    width: 160px;
+    height: 160px;
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+    display: block;
+    transform: rotate(-80deg);
+    margin-bottom: 5px;
+    z-index: -1;
+}
+
+.rotate_img_even{
+    left:100px;
+    top:0px;
+}
+
+.rotate_img_odd{
+    right:100px;
+    top:0px;
+}
+
+.rotate_img_even{
+    margin-right: auto;
+}
+
+.rotate_img_odd{
+    margin-left: auto;
+}
+
+.rotate_img_even span,
+.rotate_img_odd span{
+    position: absolute;
+    top:0;
+    left: calc(50% - 10px);
+    display: inline-block;
+    width: 20px;
+    height: 80px;
+    transform-origin: center bottom;
+    color:white;
+}
+
+.rotate_img_even span:nth-child(1),
+.rotate_img_odd span:nth-child(1){
+    transform: rotate(22.5deg);
+}
+.rotate_img_even span:nth-child(2),
+.rotate_img_odd span:nth-child(2){
+    transform: rotate(45deg);
+}
+.rotate_img_even span:nth-child(3),
+.rotate_img_odd span:nth-child(3){
+    transform: rotate(67.5deg);
+}
+.rotate_img_even span:nth-child(4),
+.rotate_img_odd span:nth-child(4){
+    transform: rotate(90deg);
+}
+.rotate_img_even span:nth-child(5),
+.rotate_img_odd span:nth-child(5){
+    transform: rotate(112.5deg);
+}
+.rotate_img_even span:nth-child(6),
+.rotate_img_odd span:nth-child(6){
+    transform: rotate(135deg);
+}
+.rotate_img_even span:nth-child(7),
+.rotate_img_odd span:nth-child(7){
+    transform: rotate(157.5deg);
+}
+.rotate_img_even span:nth-child(8),
+.rotate_img_odd span:nth-child(8){
+    transform: rotate(180deg);
+    color: red;
+    font-size: 1.2em;
+}
+.rotate_img_even span:nth-child(9),
+.rotate_img_odd span:nth-child(9){
+    transform: rotate(202.5deg);
+}
+.rotate_img_even span:nth-child(10),
+.rotate_img_odd span:nth-child(10){
+    transform: rotate(225deg);
+}
+.rotate_img_even span:nth-child(11),
+.rotate_img_odd span:nth-child(11){
+    transform: rotate(247.5deg);
+}
+.rotate_img_even span:nth-child(12),
+.rotate_img_odd span:nth-child(12){
+    transform: rotate(270deg);
+}
+.rotate_img_even span:nth-child(13),
+.rotate_img_odd span:nth-child(13){
+    transform: rotate(292.5deg);
+}
+.rotate_img_even span:nth-child(14),
+.rotate_img_odd span:nth-child(14){
+    transform: rotate(315deg);
+}
+.rotate_img_even span:nth-child(15),
+.rotate_img_odd span:nth-child(15){
+    transform: rotate(337.5deg);
+}
+.rotate_img_even span:nth-child(16),
+.rotate_img_odd span:nth-child(16){
+    transform: rotate(360deg);
+    color: red;
+    font-size: 1.2em;
+}
+
+.animated {
+	-webkit-animation-duration: 7s;
+	animation-duration: 7s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rotate_img {
+	from {
+		-webkit-animation-timing-function: linear;
+		-webkit-transform: translate(0px,0px) scale(1,1) rotate(360deg) skew(0deg,0deg);
+		opacity: 1.0;
+	} to {
+		-webkit-animation-timing-function: linear;
+		-webkit-transform: translate(0px,0px) scale(1,1) rotate(0deg) skew(0deg,0deg);
+		opacity: 1;
+	} 
+}
+
+@keyframes rotate_img {
+	from {
+		animation-timing-function: linear;
+		transform: translate(0px,0px) scale(1,1) rotate(360deg) skew(0deg,0deg);
+		opacity: 1.0;
+	} to {
+		animation-timing-function: linear;
+		transform: translate(0px,0px) scale(1,1) rotate(0deg) skew(0deg,0deg);
+		opacity: 1;
+	} 
+}
+
+.rotate_img_even,
+.rotate_img_odd{
+	-webkit-animation-name: rotate_img;
+	animation-name: rotate_img;
+	-webkit-transform-origin: center center;
+	transform-origin: center center;
+}
+
+
+/* ----------more_btn--------- */
+
+.more_btn{
+    text-align: center;
+    margin: 30px 0;
+}
+
+/*== ボタン共通設定 */
+.btn{
+    /*アニメーションの起点とするためrelativeを指定*/
+    position: relative;
+  overflow: hidden;
+    /*ボタンの形状*/
+  text-decoration: none;
+  display: inline-block;
+    border: 0.5px solid #555;/* ボーダーの色と太さ */
+    padding: 10px 30px;
+    text-align: center;
+    outline: none;
+    /*アニメーションの指定*/   
+    transition: ease .2s;
+    
+}
+
+/*ボタン内spanの形状*/
+.btn span {
+  position: relative;
+  z-index: 3;/*z-indexの数値をあげて文字を背景よりも手前に表示*/
+  color:black;
+}
+
+.btn:hover{
+    border: red 1px solid;
+}
+
+.btn:hover span{
+  color:#fff;
+}
+
+/*== 背景が流れる（斜め） */
+.bgskew::before {
+  content: '';
+    /*絶対配置で位置を指定*/
+  position: absolute;
+  top: 0;
+  left: -130%;
+    /*色や形状*/
+  background:red;
+  width:120%;
+  height: 100%;
+  transform: skewX(-25deg);
+}
+
+/*hoverした時のアニメーション*/
+.bgskew:hover::before {
+  animation: skewanime .5s forwards;/*アニメーションの名前と速度を定義*/
+}
+
+@keyframes skewanime {
+  100% {
+    left:-10%;/*画面の見えていない左から右へ移動する終了地点*/
+  }
+}
+
+
+/* -----------btnlinestretches5---------- */
+.btnlinestretches5{
+    /*線の基点とするためrelativeを指定*/
+  position:relative;
+    /*リンクの形状*/ 
+  color:black;
+    padding: 10px 0;
+  display:inline-block;
+    text-decoration: none;
+    outline: none;
+    font-size: 1em;
+}
+
+/*線の設定*/
+.btnlinestretches5::before {
+    content: "";
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    /*線の形状*/
+    width: 100%;
+    height: 1px;
+    background: red;
+    opacity: 0;
+}
+
+/*矢印の設定*/
+.btnlinestretches5::after {
+    content: "";
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom:-4px;
+    /*矢印の形状*/
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid red;
+    border-right: 2px solid red;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+/*線と矢印を繰り返しアニメーション*/
+.btnlinestretches5:hover::before {
+    animation: arrowlong01 1.5s ease infinite;
+}
+.btnlinestretches5:hover::after {
+    animation: arrowlong02 1.5s ease infinite;
+}
+
+@keyframes arrowlong01{
+    0%{width:0;opacity:0}
+    20%{width:0;opacity:1}
+    80%{width:105%;opacity:1}
+    100%{width:105%;opacity:0}
+}
+
+@keyframes arrowlong02{
+    0%{left:0;opacity:0}
+    20%{left:0;opacity:1}
+    80%{left:103%;opacity:1}
+    100%{left:103%;opacity:0}
+}
+
+/* ---------new_product------------ */
+.new_product_h2 {
+	position: relative;
+	padding-top: 20px;
+	font-size: 35px;
+    margin-bottom: 15px;
+    text-align: center;
+    color:rgba(0, 0, 0, 0.7);
+}
+
+.new_product_h2 span {
+	position: relative;
+	z-index: 2;
+}
+
+.new_product_h2::before {
+	content: attr(data-en);
+	position: absolute;
+	transform: rotate(-10deg);
+	top: -20px;
+	left: calc(50% - 110px);
+	color:rgba(255, 0, 0, 0.7) ;
+	font-size: 40px;
+	font-weight: 400;
+	font-family: luxus-brut, cursive;
+	font-style: italic;
+
+    
+}
+
+@media(max-width:864px){
+    .catchphrase{
+        font-size: 3vw;
+    }
+
+    .coffee_img{
+        padding: 110px 0;
+    }
+
+    .menu_img{
+        padding: 110px 0;
+    }
+
+    .header_main .main_nav{
+        display: none;
+    }
+
+    .toggle_btn{
+        display: block;
+        position: fixed;
+        right: 10px;
+        top: 10px;
+    }
+
+    .sns{
+        position: absolute;
+        right: 4px;
+        top: 80px;
+        margin: 0 auto;
+    }
+
+
+    #news{
+        display: block;
+        margin-bottom: 50px;
+    }
+    .news_left{
+        width: 100%;
+    }
+    
+    .news_left h2{
+        font-weight: 100;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .news_right{
+        width: 100%;
+    }
+
+    .rotate_img_even,
+    .rotate_img_odd{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    font-size: 16px;
+    text-align: center;
+    margin: 0;
+    display: block;
+    transform: rotate(-80deg);
+    margin-bottom: 10px;
+    }
+
+    .rotate_img_even{
+        left: -20px;
+        top: 0;
+    }
+
+
+    .rotate_img_odd{
+        right: -20px;
+        top: 0;
+    }
+
+    .rotate_img_even{
+        margin-right: auto;
+    }
+
+    .rotate_img_odd{
+        margin-left: auto;
+    }
+
+    .rotate_img_even span,
+    .rotate_img_odd span{
+        position: absolute;
+        top:0;
+        left: calc(50% - 8px);
+        display: inline-block;
+        width: 16px;
+        height: 60px;
+        transform-origin: center bottom;
+        color:white;
+    }
+
+    .mv_flex{
+        display: block;
+    }
+
+    #mv_left{
+        width: 100%;
+        height: 50vh;
+    }
+    
+    #mv_right{
+        width: 100%;
+        height: 50vh;
+    }
+
+    #mv_left img,#mv_right img{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    .access_flex{
+        flex-direction: column;
+    }
+
+    .access_img{
+        margin-bottom: 20px;
+    }
+    
+    .access_text{
+        padding: 0 20px;
+    }
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+
+.slider-item01 {
+    background:url(../img/annie-spratt-PM4Vu1B0gxk-unsplash.jpg);
+}
+
+.slider-item02 {
+    background:url(../img/nordwood-themes-ivP3TYdLvw0-unsplash.jpg);
+}
+
+.slider-item03 {
+    background:url(../img/brooke-lark-DMpYt_kfqL4-unsplash.jpg);
+}
+
+.slider-item04 {
+    background:url(../img/nathan-dumlao-KixfBEdyp64-unsplash.jpg);
+}
+
+.slider-item05 {
+    background:url(../img/andrew-spencer-YUEcePrJsgg-unsplash.jpg);
+}
+
+.slider-item06 {
+    background:url(../img/nathan-dumlao-c2Y16tC3yO8-unsplash.jpg);
+}
+
+
+.mv_slider{
+    flex-direction: column;
+    height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+}
+
+.mv_slider li{
+    list-style: none;
+}
+
+.slider-left,
+.slider-right {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.slider-item {
+    width: 100%;/*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+    height:50vh;/*各スライダーの縦幅を画面の高さの半分（50vh）にする*/
+    background-repeat: no-repeat;/*背景画像をリピートしない*/
+    background-position: center;/*背景画像の位置を中央に*/
+    background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
+}
+}
