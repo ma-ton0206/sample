@@ -582,12 +582,16 @@ dt,dd{
 }
 
 .explain{
-    padding-top: 50px;
+    padding-top: 40px;
     position: relative;
     opacity: 0;
     z-index: 2;
-    
 }
+
+.explain:nth-child(1){
+    margin-bottom: 30px;
+}
+
 
 
 
@@ -1233,13 +1237,13 @@ iframe{
     }
 
     .rotate_img_even{
-        left: -20px;
+        left: 0;
         top: 0;
     }
 
 
     .rotate_img_odd{
-        right: -20px;
+        right: 0;
         top: 0;
     }
 
