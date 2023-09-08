@@ -2,7 +2,6 @@
 
 html{
     font-family: '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック体', YuGothic, 'Hiragino Sans', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
-    overflow-x: hidden;
 }
 
 .wrapper{
@@ -275,8 +274,8 @@ a:hover{
 
 .side_nav{
     position: fixed;
-    left:-35%;
-    width: 35%;
+    left:-40%;
+    width: 40%;
     height: 100vh;
     z-index:100 ;
     background-color: white;
@@ -778,7 +777,7 @@ svg{
 }
 
 .info_flex dt{
-    width: 200px;
+    width: 120px;
     font-size: 1em;
     color: white;
 }
@@ -815,6 +814,7 @@ iframe{
     font-size: 20px;
     text-align: center;
     margin: 0;
+    padding: 0;
     display: block;
     transform: rotate(-80deg);
     margin-bottom: 5px;
@@ -822,13 +822,13 @@ iframe{
 }
 
 .rotate_img_even{
-    left:100px;
-    top:0px;
+    left:50px;
+    top:0;
 }
 
 .rotate_img_odd{
-    right:100px;
-    top:0px;
+    right:0;
+    top:0;
 }
 
 .rotate_img_even{
@@ -1121,6 +1121,12 @@ iframe{
 }
 
 @media(max-width:864px){
+
+    .wrapper{
+        max-width: 1100px;
+        padding: 0 20px;
+        margin: 0 auto;
+    }
     .catchphrase{
         font-size: 3vw;
     }
@@ -1133,6 +1139,22 @@ iframe{
         padding: 110px 0;
     }
 
+    .menu_h2{
+        margin-top: 20px;
+    }
+
+    .menu_h2 h2 .p_1{
+        font-size: 2.4em;
+    }
+    
+    .menu_h2 h2 .p_2{
+        font-size: 0.4em;
+    }
+    
+    .menu_h2 h2 .p_3{
+        font-size: 0.8em;
+    }
+
     .header_main .main_nav{
         display: none;
     }
@@ -1140,8 +1162,8 @@ iframe{
     .toggle_btn{
         display: block;
         position: fixed;
-        right: 10px;
-        top: 10px;
+        right: 12px;
+        top: 20px;
     }
 
     .sns{
@@ -1170,12 +1192,37 @@ iframe{
         width: 100%;
     }
 
+    .concept_h2{
+        padding-top: 20px;
+    }
+
+    .concept_h2 h2 .p_1{
+        font-size: 2em;
+    }
+    
+    .concept_h2 h2 .p_2{
+        font-size: 0.4em;
+    }
+    
+    .concept_h2 h2 .p_3{
+        font-size: 0.8em;
+    }
+
+    .concept .text{
+        padding: 0 10px;
+    }
+
+    .concept .text p{
+        font-size: 0.9em;
+        line-height: 1.4em;
+    }
+
     .rotate_img_even,
     .rotate_img_odd{
     position: relative;
-    width: 120px;
-    height: 120px;
-    font-size: 16px;
+    width: 80px;
+    height: 80px;
+    font-size: 12px;
     text-align: center;
     margin: 0;
     display: block;
@@ -1200,6 +1247,7 @@ iframe{
 
     .rotate_img_odd{
         margin-left: auto;
+        padding-top: 10px;
     }
 
     .rotate_img_even span,
@@ -1208,8 +1256,8 @@ iframe{
         top:0;
         left: calc(50% - 8px);
         display: inline-block;
-        width: 16px;
-        height: 60px;
+        width: 12px;
+        height: 40px;
         transform-origin: center bottom;
         color:white;
     }
@@ -1245,6 +1293,11 @@ iframe{
     .access_text{
         padding: 0 20px;
     }
+
+    
+    .concept h3{
+        font-size:1em;
+}
 
 /*==================================================
 スライダーのためのcss
