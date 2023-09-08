@@ -1214,8 +1214,8 @@ iframe{
         font-size: 0.8em;
     }
 
-    .concept .text{
-        padding: 0 10px;
+    .concept{
+        padding: 0 10px 50px 10px;
     }
 
     .concept .text p{
@@ -1233,7 +1233,7 @@ iframe{
     margin: 0;
     display: block;
     transform: rotate(-80deg);
-    margin-bottom: 10px;
+    margin-bottom: 10px
     }
 
     .rotate_img_even{
