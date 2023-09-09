@@ -2,6 +2,7 @@ $(function(){
 
 
   $('.one-time').slick({
+    arrows:false,
     dots: true,
     infinite: true,
     speed: 400,
@@ -24,29 +25,6 @@ $(function(){
     $("html, body").animate({ scrollTop: position }, 400, "swing");
     // urlが変化しないようにfalseを返す
     return false; 
-  });
-
-
-  /*=================================================
-  PICK UP スライダー
-  ===================================================*/
-  // カルーセル用 jQueryプラグイン「slick」の設定
-  // マニュアル：https://kenwheeler.github.io/slick/
-  $(".PICK_UP_img").slick({
-    arrows: false,
-    centerMode: true,
-    centerPadding: "100px",
-    slidesToShow: 3,
-    autoplay: false,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          centerPadding: "50px",
-          slidesToShow: 1,
-        },
-      },
-    ],
   });
 
   /*=================================================
@@ -153,7 +131,7 @@ $(function(){
     rtl: true,//スライダの表示方向を左⇒右に変更する
 
   });
-    // これを複数使う
+    これを複数使う
 
 
     

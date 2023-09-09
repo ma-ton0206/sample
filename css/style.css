@@ -2,8 +2,6 @@
 
 html{
     font-family: '游ゴシック Medium', 'Yu Gothic Medium', '游ゴシック体', YuGothic, 'Hiragino Sans', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
-    width: 100%;
-    overflow-x: hidden;
 }
 
 .wrapper{
@@ -253,9 +251,6 @@ a:hover{
     background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
 }
 
-
-
-
 .mask{
     display: none;
     transition: all 0.5s;
@@ -349,6 +344,7 @@ a:hover{
 }
 .one-time{
     width: 100%;
+    
 }
 
 .new_product_conteiner{
