@@ -84,22 +84,24 @@ $(function(){
         $(this).addClass("fadeUp");
       }
     });
+  });
 
-    $(window).scroll(function () {
-      $(".fadeUp_img").each(function () {
+
+  $(window).scroll(function () {
+    $(".fadeUp_img").each(function () {
+
+      var scroll = $(window).scrollTop();
   
-        var scroll = $(window).scrollTop();
+      var target = $(this).offset().top;
   
-        var target = $(this).offset().top;
+      var windowHeight = $(window).height();
   
-        var windowHeight = $(window).height();
+      if (scroll > target - windowHeight + $(this).outerHeight()) {
+        // outerHeight()はpaddingを含めた高さを取得する
   
-        if (scroll > target - windowHeight + $(this).outerHeight()) {
-          // outerHeight()はpaddingを含めた高さを取得する
-  
-          $(this).addClass("fadeUp");
-        }
-      });
+        $(this).addClass("fadeUp");
+      }
+    });
   });
 
 
@@ -134,9 +136,6 @@ $(function(){
     これを複数使う
 
 
-    
-  });
-  
 
 })
 
