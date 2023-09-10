@@ -480,7 +480,7 @@ dt,dd{
     bottom: 0;
     right: -6px;
     /*矢印の形状*/
-    width: 1px;
+    width: 2px;
     height: 20px;
     background: #eee;
     transform: skewX(-31deg);
@@ -493,7 +493,7 @@ dt,dd{
   bottom:0;
   right:0;
     /*矢印の形状*/
-  width:1px;
+  width:2px;
   height: 120px;
   background:#eee;
 }
@@ -1411,6 +1411,51 @@ iframe{
     .menu_img{
         background-attachment: local;
     }
+
+
+    /*=== 9-1-4 矢印が動いてスクロールを促す  ====*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown4{
+    /*描画位置※位置は適宜調整してください*/
+  position:absolute;
+  bottom:1%;
+  right:50%;
+    /*矢印の動き1秒かけて永遠にループ*/
+  animation: arrowmove 1s ease-in-out infinite;
+}
+
+/*下からの距離が変化して全体が下→上→下に動く*/
+@keyframes arrowmove{
+      0%{bottom:1%;}
+      50%{bottom:3%;}
+     100%{bottom:1%;}
+ }
+
+/*Scrollテキストの描写*/
+.scrolldown4 span{
+    /*描画位置*/
+  position: absolute;
+  left:-22px;
+  bottom:0px;
+    /*テキストの形状*/
+  color: #eee;
+  font-size: 1em;
+  letter-spacing: 0.4em;
+
+}
+
+/* 矢印の描写 */
+.scrolldown4:before {
+    /*矢印の形状*/
+    width: 2px;
+}
+
+.scrolldown4:after{
+    /*矢印の形状*/
+  width:2px;
+  height: 80px;
+}
 
 /*==================================================
 スライダーのためのcss
