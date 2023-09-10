@@ -10,6 +10,7 @@ $(function(){
     adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 3500,
+    fade:true
   });
   
   // ページ内のリンクをクリックした時に動作する
@@ -22,10 +23,11 @@ $(function(){
     let position = target.offset().top;
     // animateでスムーススクロールを行う   ページトップからpositionだけスクロールする
     // 600はスクロール速度で単位はミリ秒  swingはイージングのひとつ
-    $("html, body").animate({ scrollTop: position }, 400, "swing");
+    $("html, body").animate({ scrollTop: position }, 800, "swing");
     // urlが変化しないようにfalseを返す
     return false; 
   });
+
 
   /*=================================================
   スクロール時の画像フェード表示
@@ -34,7 +36,7 @@ $(function(){
   
   $(window).scroll(function () {
     // fadeinクラスに対して順に処理を行う
-    $(".fadein").each(function () {
+    $("#new_product").each(function () {
       // スクロールした距離
       let scroll = $(window).scrollTop();
       // fadeinクラスの要素までの距離
@@ -45,7 +47,7 @@ $(function(){
       // したタイミングで要素を表示
       if (scroll > target - windowHeight + 200) {
         $(this).css("opacity", "1");
-        $(this).css("transform", "translateY(0)");
+        $(this).css("transition", "1s");
       }
     });
   });
@@ -133,7 +135,41 @@ $(function(){
     rtl: true,//スライダの表示方向を左⇒右に変更する
 
   });
-    これを複数使う
+
+  //スクロールした際の動きを関数でまとめる
+  function PageTopAnime() {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 200){//上から200pxスクロールしたら
+      $('#page-top').removeClass('RightMove');//#page-topについているRightMoveというクラス名を除く
+      $('#page-top').addClass('LeftMove');//#page-topについているLeftMoveというクラス名を付与
+    }else{
+      if(
+        $('#page-top').hasClass('LeftMove')){//すでに#page-topにLeftMoveというクラス名がついていたら
+        $('#page-top').removeClass('LeftMove');//LeftMoveというクラス名を除き
+        $('#page-top').addClass('RightMove');//RightMoveというクラス名を#page-topに付与
+      }
+    }
+}
+
+  // 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function () {
+  PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
+  });
+
+  // ページが読み込まれたらすぐに動かしたい場合の記述
+  $(window).on('load', function () {
+  PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
+  });
+
+
+  // #page-topをクリックした際の設定
+  $('#page-top').click(function () {
+    $('body,html').animate({
+        scrollTop: 0//ページトップまでスクロール
+    }, 500);//ページトップスクロールの速さ。数字が大きいほど遅くなる
+    return false;//リンク自体の無効化
+  });
+      これを複数使う
 
 
 

@@ -225,11 +225,11 @@ a:hover{
 }
 
 .slider-item02 {
-    background:url(../img/andrew-spencer-YUEcePrJsgg-unsplash.jpg);
+    background:url(../img/nordwood-themes-ivP3TYdLvw0-unsplash.jpg);
 }
 
 .slider-item03 {
-    background:url(../img/nathan-dumlao-c2Y16tC3yO8-unsplash.jpg);
+    background:url(../img/brooke-lark-DMpYt_kfqL4-unsplash.jpg);
 }
 
 .slider-item04 {
@@ -237,11 +237,11 @@ a:hover{
 }
 
 .slider-item05 {
-    background:url(../img/nordwood-themes-ivP3TYdLvw0-unsplash.jpg);
+    background:url(../img/andrew-spencer-YUEcePrJsgg-unsplash.jpg);
 }
 
 .slider-item06 {
-    background:url(../img/brooke-lark-DMpYt_kfqL4-unsplash.jpg);
+    background:url(../img/nathan-dumlao-c2Y16tC3yO8-unsplash.jpg);
 }
 
 .slider-item {
@@ -283,7 +283,6 @@ a:hover{
 }
 
 .open .side_nav{
-
     opacity: 1;
     left:0;
 }
@@ -342,7 +341,9 @@ a:hover{
 #new_product{
     margin-top: 50px;
     margin-bottom: 100px;
+    opacity: 0;
 }
+
 .one-time{
     width: 100%;
     
@@ -597,7 +598,7 @@ dt,dd{
 
 .fadeUp{
     animation-name:fadeUpAnime;
-    animation-duration:0.5s;
+    animation-duration:1s;
     animation-fill-mode:forwards;
     opacity:0;
     }
@@ -1125,6 +1126,103 @@ iframe{
 
     
 }
+/* ----------page-top---------- */
+
+#page-top a{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-color: #003d76;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase; 
+    text-decoration: none;
+    font-size:0.6rem;
+    transition:all 0.5s;
+    position: relative;
+  }
+  
+  #page-top a:hover{
+    color:#003C76 ;
+  }
+
+  #page-top a:hover::before{
+    content: "";
+    top:20px;
+    width: 12px;
+    height: 2px;
+    border-radius: 0 2px 2px 0;
+    background-color:white;
+    display: block;
+    position: absolute;
+    rotate: 45deg;
+    transform: translateX(5.1px);
+    
+  }
+
+  #page-top a:hover::after{
+    content: "";
+    top:20px;
+    width: 12px;
+    height: 2px;
+    border-radius: 2px 0 0 2px;
+    background-color:white;
+    display: block;
+    position: absolute;
+    rotate: -45deg;
+    transform: translateX(-5.1px);
+  }
+
+
+  
+  /*リンクを右下に固定*/
+  #page-top {
+    position: fixed;
+    right: 10px;
+    bottom:10px;
+    z-index: 2;
+      /*はじめは非表示*/
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  
+  /*　左の動き　*/
+  
+  #page-top.LeftMove{
+    animation: LeftAnime 0.5s forwards;
+  }
+  
+  @keyframes LeftAnime{
+    from {
+      opacity: 0;
+    transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+    transform: translateX(0);
+    }
+  }
+  
+  /*　右の動き　*/
+  
+  #page-top.RightMove{
+    animation: RightAnime 0.5s forwards;
+  }
+  @keyframes RightAnime{
+    from {
+      opacity: 1;
+    transform: translateX(0);
+    }
+    to {
+      opacity: 1;
+    transform: translateX(100px);
+    }
+  }
+
+/* ----------media query---------- */
 
 @media(max-width:864px){
 
